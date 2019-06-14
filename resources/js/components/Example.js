@@ -4,11 +4,13 @@ import Axios from "axios";
 
 export default class Example extends Component {
     state = {
-        text: "",
-        tag: ""
+        body: "",
+        title: "My Question",
+        tag: "",
+        user_id: 1
     };
     handleTagOption = e => this.setState({ tag: e.target.value });
-    handleTextArea = e => this.setState({ text: e.target.value });
+    handleTextArea = e => this.setState({ body: e.target.value });
     handleSubmit = e => {
         e.preventDefault();
         Axios.post("/question", this.state)
@@ -45,7 +47,7 @@ export default class Example extends Component {
                                     className="form-control"
                                     id="exampleFormControlTextarea1"
                                     rows="3"
-                                    value={this.state.text}
+                                    value={this.state.body}
                                     onChange={this.handleTextArea}
                                 />
                             </div>

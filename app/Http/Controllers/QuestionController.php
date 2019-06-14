@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\QuestionRequest;
 use App\Question;
 use Illuminate\Http\Request;
 
@@ -33,9 +34,13 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(QuestionRequest $request)
     {
-        return $request;
+        return Question::create([
+            'title' => request('title'),
+            'body' => request('body'),
+            'user_id' => 1,
+        ]);
     }
 
     /**

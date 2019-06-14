@@ -61721,8 +61721,10 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Example)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_this), "state", {
-      text: "",
-      tag: ""
+      body: "",
+      title: "My Question",
+      tag: "",
+      user_id: 1
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleTagOption", function (e) {
@@ -61733,7 +61735,7 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "handleTextArea", function (e) {
       return _this.setState({
-        text: e.target.value
+        body: e.target.value
       });
     });
 
@@ -61777,7 +61779,7 @@ function (_Component) {
         className: "form-control",
         id: "exampleFormControlTextarea1",
         rows: "3",
-        value: this.state.text,
+        value: this.state.body,
         onChange: this.handleTextArea
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSubmit,
