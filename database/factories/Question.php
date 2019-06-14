@@ -9,7 +9,7 @@ $factory->define(Question::class, function (Faker $faker) {
     return [
         'title' => $faker->sentence,
         'body' => $faker->sentence,
-        'user_id' => $faker->numberBetween(0, 5),
+        'user_id' => $faker->numberBetween(1, 5),
         'updated_at' => now(),
         'created_at' => now(),
     ];
