@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Question;
 use Illuminate\Foundation\Http\FormRequest;
 
 class QuestionRequest extends FormRequest
@@ -30,4 +31,9 @@ class QuestionRequest extends FormRequest
             'tag' => 'required|string',
         ];
     }
+    public function process()
+    {
+        return Question::create($this->only(['title', 'body', 'user_id', 'tag']));
+    }
+
 }

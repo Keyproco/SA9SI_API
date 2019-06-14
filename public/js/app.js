@@ -61752,6 +61752,13 @@ function (_Component) {
   }
 
   _createClass(Example, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/question").then(function (r) {
+        return console.log("questions", r);
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       console.log(this.state.tag);

@@ -15,7 +15,8 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        //
+        $questions = Question::all();
+        return !$questions->isEmpty() ? $questions : 'Aucune question n\'est disponible';
     }
 
     /**
@@ -36,13 +37,8 @@ class QuestionController extends Controller
      */
     public function store(QuestionRequest $request)
     {
-        return Question::create([
-            'title' => request('title'),
-            'body' => request('body'),
-            'user_id' => 1,
-        ]);
+        return $request->process();
     }
-
     /**
      * Display the specified resource.
      *

@@ -17,6 +17,9 @@ export default class Example extends Component {
             .then(r => console.log(r))
             .catch(e => console.log(e));
     };
+    componentDidMount() {
+        Axios.get("/question").then(r => console.log("questions", r));
+    }
     render() {
         console.log(this.state.tag);
         return (
