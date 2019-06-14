@@ -4,6 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="{{ asset('js/app.js') }}" defer></script>
+            <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <title>Laravel</title>
 
         <!-- Fonts -->
@@ -44,9 +48,7 @@
                 text-align: center;
             }
 
-            .title {
-                font-size: 84px;
-            }
+
 
             .links > a {
                 color: #636b6f;
