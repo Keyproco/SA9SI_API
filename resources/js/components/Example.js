@@ -7,7 +7,8 @@ export default class Example extends Component {
         body: "",
         title: "My Question",
         tag: "",
-        user_id: 1
+        user_id: 1,
+        questions: []
     };
     handleTagOption = e => this.setState({ tag: e.target.value });
     handleTextArea = e => this.setState({ body: e.target.value });
@@ -17,13 +18,33 @@ export default class Example extends Component {
             .then(r => console.log(r))
             .catch(e => console.log(e));
     };
-    componentDidMount() {
-        Axios.get("/question").then(r => console.log("questions", r));
+    renderQuestions() {
+        console.log(this.state.questions);
+        return this.state.questions.map((question, i) => {
+            return (
+                <tr key={i}>
+                    <td>
+                        {" "}
+                        <a href={"/question/" + question.id}>
+                            {" "}
+                            {question.title}
+                        </a>
+                    </td>
+                </tr>
+            );
+        });
+    }
+    componentWillMount() {
+        Axios.get("/question").then(({ data }) =>
+            this.setState({ questions: data })
+        );
     }
     render() {
-        console.log(this.state.tag);
         return (
             <div className="container">
+                <table>
+                    <tbody>{this.renderQuestions()}</tbody>
+                </table>
                 <div className="row justify-content-center">
                     <div className="card">
                         <div className="card-header">Question</div>

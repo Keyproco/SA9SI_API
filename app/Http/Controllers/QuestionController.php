@@ -47,9 +47,9 @@ class QuestionController extends Controller
      */
     public function show(Question $question)
     {
-        //
+        $question = Question::find($question->id);
+        return view('question', ['question' => $question]);
     }
-
     /**
      * Show the form for editing the specified resource.
      *

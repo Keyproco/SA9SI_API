@@ -61724,7 +61724,8 @@ function (_Component) {
       body: "",
       title: "My Question",
       tag: "",
-      user_id: 1
+      user_id: 1,
+      questions: []
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleTagOption", function (e) {
@@ -61752,19 +61753,35 @@ function (_Component) {
   }
 
   _createClass(Example, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/question").then(function (r) {
-        return console.log("questions", r);
+    key: "renderQuestions",
+    value: function renderQuestions() {
+      console.log(this.state.questions);
+      return this.state.questions.map(function (question, i) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+          key: i
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "/question/" + question.id
+        }, " ", question.title)));
+      });
+    }
+  }, {
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/question").then(function (_ref) {
+        var data = _ref.data;
+        return _this2.setState({
+          questions: data
+        });
       });
     }
   }, {
     key: "render",
     value: function render() {
-      console.log(this.state.tag);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.renderQuestions())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row justify-content-center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card"
