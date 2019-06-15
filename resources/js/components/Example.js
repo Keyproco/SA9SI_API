@@ -6,7 +6,7 @@ export default class Example extends Component {
     state = {
         body: "",
         title: "My Question",
-        tag: "",
+        tag: "science",
         questions: []
     };
     handleTagOption = e => this.setState({ tag: e.target.value });
@@ -22,7 +22,7 @@ export default class Example extends Component {
             .catch(e => console.log(e));
     };
     renderQuestions() {
-        console.log(this.state.questions);
+        console.log(this.state);
         return this.state.questions.map((question, i) => {
             return (
                 <tr key={i}>

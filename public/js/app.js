@@ -61731,7 +61731,7 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_this), "state", {
       body: "",
       title: "My Question",
-      tag: "",
+      tag: "science",
       questions: []
     });
 
@@ -61767,7 +61767,7 @@ function (_Component) {
   _createClass(Example, [{
     key: "renderQuestions",
     value: function renderQuestions() {
-      console.log(this.state.questions);
+      console.log(this.state);
       return this.state.questions.map(function (question, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
           key: i
