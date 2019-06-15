@@ -15,6 +15,10 @@
                 </div>
                 </div>
             </div>
+            Réponses :
+            @foreach ($question->answers as $answer)
+    <p> {{ $answer->body }}</p>
+@endforeach
         </div>
     </div>
 </div>
