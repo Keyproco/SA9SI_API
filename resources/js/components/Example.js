@@ -7,7 +7,6 @@ export default class Example extends Component {
         body: "",
         title: "My Question",
         tag: "",
-        // user_id: 1,
         questions: []
     };
     handleTagOption = e => this.setState({ tag: e.target.value });
@@ -15,7 +14,11 @@ export default class Example extends Component {
     handleSubmit = e => {
         e.preventDefault();
         Axios.post("/question", this.state)
-            .then(r => console.log(r))
+            .then(({ data }) =>
+                this.setState(prevState => ({
+                    questions: [...prevState.questions, data]
+                }))
+            )
             .catch(e => console.log(e));
     };
     renderQuestions() {
@@ -24,9 +27,7 @@ export default class Example extends Component {
             return (
                 <tr key={i}>
                     <td>
-                        {" "}
                         <a href={"/question/" + question.id}>
-                            {" "}
                             {question.title}
                         </a>
                     </td>
