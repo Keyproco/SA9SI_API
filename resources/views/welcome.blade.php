@@ -82,9 +82,6 @@
             @endif
 
             <div class="content">
-                <div id="example" class="title m-b-md">
-
-                </div>
             </div>
         </div>
     </body>

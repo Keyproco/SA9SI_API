@@ -14,7 +14,9 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                                    <div id="example" class="title m-b-md">
+
+                </div>
                 </div>
             </div>
         </div>
