@@ -27,13 +27,12 @@ class QuestionRequest extends FormRequest
         return [
             'title' => 'required|string',
             'body' => 'required|string',
-            'user_id' => 'required|integer',
             'tag' => 'required|string',
         ];
     }
     public function process()
     {
-        return Question::create($this->only(['title', 'body', 'user_id', 'tag']));
+        return Question::create(array_add($this->only(['title', 'body', 'tag']), 'user_id', auth()->id()));
     }
 
 }
