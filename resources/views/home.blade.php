@@ -5,12 +5,12 @@
 <div class="row justify-content-center">
 
   <div class="col-md-2">
-    <div class="list-group" id="list-tab" role="tablist">
+<div class="list-group">
    @foreach ($tags as $tag)
-    <a href="/tag/{{$tag}}" class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home""> {{$tag}}</a>
+   <a href="/tag/{{$tag}}"  class="list-group-item list-group-item-action ">  {{$tag}} </a>
     @endforeach
+</div>
 
-    </div>
   </div>
         <div class="col-md-8">
             <div class="card">
