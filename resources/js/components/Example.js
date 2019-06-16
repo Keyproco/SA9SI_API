@@ -11,6 +11,7 @@ export default class Example extends Component {
     };
     handleTagOption = e => this.setState({ tag: e.target.value });
     handleTextArea = e => this.setState({ body: e.target.value });
+    handleTitle = e => this.setState({ title: e.target.value });
     handleSubmit = e => {
         e.preventDefault();
         Axios.post("/question", this.state)
@@ -50,6 +51,17 @@ export default class Example extends Component {
                     <div className="card">
                         <div className="card-header">Question</div>
                         <form>
+                            <div className="form-group">
+                                <label htmlFor="password">Titre</label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="password"
+                                    // value={this.state.title}
+                                    onChange={this.handleTitle}
+                                    placeholder="Votre titre"
+                                />
+                            </div>
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlSelect1">
                                     Thème

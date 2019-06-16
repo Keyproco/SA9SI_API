@@ -46,7 +46,7 @@ class TagController extends Controller
      */
     public function show(Tag $tag)
     {
-        return Tag::find($tag->id);
+        return \App\Tag::find($tag->id)->questions;
     }
 
     /**

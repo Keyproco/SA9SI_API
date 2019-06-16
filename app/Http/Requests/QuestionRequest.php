@@ -34,7 +34,7 @@ class QuestionRequest extends FormRequest
     {
         $question = Question::create(array_add($this->only(['title', 'body', 'tag']), 'user_id', auth()->id()));
         $tag = \App\Tag::where('name', 'like', $this->tag)->first();
-        return $question->tags()->attach($tag);
+        $question->tags()->attach($tag);
+        return $question;
     }
-
 }

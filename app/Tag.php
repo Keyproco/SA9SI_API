@@ -14,6 +14,7 @@ class Tag extends Model
     }
     public function getRoutekeyName()
     {
-        return 'name';
+        return str_slug('name');
+
     }
 }
