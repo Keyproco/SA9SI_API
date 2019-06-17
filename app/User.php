@@ -40,4 +40,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Question::class);
     }
+    public function ask(Question $question)
+    {
+        $tag = \App\Tag::where('name', 'like', request('tag'))->first();
+        $this->questions()->save($question)->tags()->attach($tag);
+    }
 }

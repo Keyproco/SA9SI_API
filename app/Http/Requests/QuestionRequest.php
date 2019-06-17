@@ -32,9 +32,6 @@ class QuestionRequest extends FormRequest
     }
     public function process()
     {
-        $question = Question::create(array_add($this->only(['title', 'body', 'tag']), 'user_id', auth()->id()));
-        $tag = \App\Tag::where('name', 'like', $this->tag)->first();
-        $question->tags()->attach($tag);
-        return $question;
+        auth()->user()->ask(new Question(array_add($this->only(['title', 'body', 'tag']), 'user_id', auth()->id())));
     }
 }
