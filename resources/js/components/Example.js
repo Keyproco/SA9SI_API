@@ -22,8 +22,7 @@ export default class Example extends Component {
             )
             .catch(e => console.log(e));
     };
-    renderQuestions() {
-        console.log(this.state);
+    questions() {
         return this.state.questions.map((question, i) => {
             return (
                 <tr key={i}>
@@ -37,15 +36,18 @@ export default class Example extends Component {
         });
     }
     componentWillMount() {
-        Axios.get("/question").then(({ data }) =>
-            this.setState({ questions: data })
-        );
+        Axios.get("/question").then(({ data }) => {
+            console.log(data);
+            this.setState({ questions: data });
+        });
     }
     render() {
         return (
             <div className="container">
                 <table>
-                    <tbody>{this.renderQuestions()}</tbody>
+                    <tbody>
+                        {this.state.questions.length > 0 && this.questions()}
+                    </tbody>
                 </table>
                 <div className="row justify-content-center">
                     <div className="card">

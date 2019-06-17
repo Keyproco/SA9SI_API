@@ -61771,9 +61771,8 @@ function (_Component) {
   }
 
   _createClass(Example, [{
-    key: "renderQuestions",
-    value: function renderQuestions() {
-      console.log(this.state);
+    key: "questions",
+    value: function questions() {
       return this.state.questions.map(function (question, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
           key: i
@@ -61789,7 +61788,9 @@ function (_Component) {
 
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/question").then(function (_ref2) {
         var data = _ref2.data;
-        return _this2.setState({
+        console.log(data);
+
+        _this2.setState({
           questions: data
         });
       });
@@ -61799,7 +61800,7 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.renderQuestions())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.state.questions.length > 0 && this.questions())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row justify-content-center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card"

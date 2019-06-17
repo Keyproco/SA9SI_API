@@ -16,7 +16,7 @@ class QuestionController extends Controller
     public function index()
     {
         $questions = Question::all();
-        return !$questions->isEmpty() ? $questions : 'Aucune question n\'est disponible';
+        return !$questions->isEmpty() ? $questions : [];
     }
 
     /**

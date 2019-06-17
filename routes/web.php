@@ -20,3 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/question', 'QuestionController');
 Route::resource('/tag', 'TagController');
+Route::resource('/question/{question}/answers', 'AnswerController');

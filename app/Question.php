@@ -5,6 +5,7 @@ namespace App;
 use App\Answer;
 use App\Tag;
 use App\User;
+use Auth;
 use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
@@ -21,5 +22,9 @@ class Question extends Model
     public function tags()
     {
         return $this->belongsToMany(Tag::class);
+    }
+    public function answer($body)
+    {
+        return $this->answers()->create(['body' => $body, 'user_id' => auth()->id()]);
     }
 }
