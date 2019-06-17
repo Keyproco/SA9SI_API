@@ -37,7 +37,7 @@ class QuestionController extends Controller
      */
     public function store(QuestionRequest $request)
     {
-        $request->process();
+        $request->processQuestionRequest();
         return $request; // pour l'instant..
     }
     /**

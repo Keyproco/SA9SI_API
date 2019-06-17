@@ -30,7 +30,7 @@ class QuestionRequest extends FormRequest
             'tag' => 'required|string',
         ];
     }
-    public function process()
+    public function processQuestionRequest()
     {
         auth()->user()->ask(new Question(array_add($this->only(['title', 'body', 'tag']), 'user_id', auth()->id())));
     }
