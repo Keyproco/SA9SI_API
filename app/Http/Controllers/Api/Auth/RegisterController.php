@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 
 class RegisterController extends Controller
 {
-    public function register()
-    { }
+    public function register(Request $request)
+    {
+        return 'Api register controller';
+    }
 }
