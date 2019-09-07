@@ -20,7 +20,7 @@ class LoginController extends Controller
             return response(['status' => 'Error', 'message' => 'User not found']);
         }
         if (Hash::check($request->password, $user->password)) {
-            return response(['status' => 'Success', 'acess_token' =>  $user->createToken('authToken')->accessToken]);
+            return response(['status' => 'Success', 'acess_token' =>  $user->createToken('authToken')->accessToken], 201);
         } else {
             return response(['status' => 'Error', 'message' => 'Wrong password']);
         }

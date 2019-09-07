@@ -13,6 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::post('flutter', function () {
+    return ['token' => 'qdskqsd'];
+});
+Route::resource('/questions', 'QuestionController');
 Route::post('register', 'Api\Auth\RegisterController@register');
 Route::post('login', 'Api\Auth\LoginController@login');
 Route::middleware('auth:api')->get('/user', function (Request $request) {

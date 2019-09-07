@@ -61730,8 +61730,8 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "state", {
       body: "",
-      title: "My Question",
-      tag: "science",
+      title: "",
+      tag: "",
       questions: []
     });
 
@@ -61742,7 +61742,7 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleTextArea", function (e) {
-      return _this.setState({
+      _this.setState({
         body: e.target.value
       });
     });
@@ -61757,11 +61757,14 @@ function (_Component) {
       e.preventDefault();
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/question", _this.state).then(function (_ref) {
         var data = _ref.data;
-        return _this.setState(function (prevState) {
+
+        _this.setState(function (prevState) {
           return {
             questions: [].concat(_toConsumableArray(prevState.questions), [data])
           };
         });
+
+        console.log(data);
       })["catch"](function (e) {
         return console.log(e);
       });
@@ -61798,6 +61801,7 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      console.log("body", this.state.body, this.state.title, this.state.tag);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.state.questions.length > 0 && this.questions())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

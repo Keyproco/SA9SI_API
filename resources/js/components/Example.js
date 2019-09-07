@@ -5,21 +5,24 @@ import Axios from "axios";
 export default class Example extends Component {
     state = {
         body: "",
-        title: "My Question",
-        tag: "science",
+        title: "",
+        tag: "",
         questions: []
     };
     handleTagOption = e => this.setState({ tag: e.target.value });
-    handleTextArea = e => this.setState({ body: e.target.value });
+    handleTextArea = e => {
+        this.setState({ body: e.target.value });
+    };
     handleTitle = e => this.setState({ title: e.target.value });
     handleSubmit = e => {
         e.preventDefault();
         Axios.post("/question", this.state)
-            .then(({ data }) =>
+            .then(({ data }) => {
                 this.setState(prevState => ({
                     questions: [...prevState.questions, data]
-                }))
-            )
+                }));
+                console.log(data);
+            })
             .catch(e => console.log(e));
     };
     questions() {
@@ -42,6 +45,7 @@ export default class Example extends Component {
         });
     }
     render() {
+        console.log("body", this.state.body, this.state.title, this.state.tag);
         return (
             <div className="container">
                 <table>
