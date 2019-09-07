@@ -23,10 +23,8 @@ class AnswerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-
-    }
+    public function create($request)
+    { }
 
     /**
      * Store a newly created resource in storage.
@@ -37,7 +35,7 @@ class AnswerController extends Controller
     public function store(Question $question)
     {
         $question->answer(request('body'));
-        back();
+        return back();
     }
 
     /**
