@@ -18,6 +18,7 @@ class CreateQuestionsTable extends Migration
             $table->unsignedInteger('user_id');
             $table->string('title');
             $table->string('body');
+            $table->mediumText('image')->nullable();
             $table->timestamps();
         });
     }
