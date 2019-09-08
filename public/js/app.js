@@ -61797,7 +61797,11 @@ function (_Component) {
       return this.state.questions.map(function (question, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
           key: i
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: question.image,
+          "class": "img-fluid",
+          alt: "Responsive image"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           href: "/question/" + question.id
         }, question.title)));
       });

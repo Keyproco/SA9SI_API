@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Storage;
 use App\Question;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -35,10 +36,13 @@ class QuestionRequest extends FormRequest
     {
         $file = request()->file('image');
         $ext = $file->extension();
-        $path = $file->storeAs('covers-' . auth()->id(), "cover." . "{$ext}", 'local');
+        $path = $file->storeAs('public/covers-' . auth()->id(), "cover." . "{$ext}", 'local');
+        $publicPath = \Storage::url($path);
+        $url = asset($publicPath);
+
         auth()->user()->ask(new Question(array_merge($this->only(['title', 'body', 'tag']), [
             'user_id' => auth()->id(),
-            'image' => $path
+            'image' => $publicPath
         ])));
     }
 }

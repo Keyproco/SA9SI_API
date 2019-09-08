@@ -45,6 +45,11 @@ export default class Example extends Component {
             return (
                 <tr key={i}>
                     <td>
+                        <img
+                            src={question.image}
+                            class="img-fluid"
+                            alt="Responsive image"
+                        />
                         <a href={"/question/" + question.id}>
                             {question.title}
                         </a>
