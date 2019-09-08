@@ -28,10 +28,17 @@ class QuestionRequest extends FormRequest
             'title' => 'required|string',
             'body' => 'required|string',
             'tag' => 'required|string',
+            'image' => 'required'
         ];
     }
     public function processQuestionRequest()
     {
-        auth()->user()->ask(new Question(array_add($this->only(['title', 'body', 'tag']), 'user_id', auth()->id())));
+        $file = request()->file('image');
+        $ext = $file->extension();
+        $path = $file->storeAs('covers-' . auth()->id(), "cover." . "{$ext}", 'local');
+        auth()->user()->ask(new Question(array_merge($this->only(['title', 'body', 'tag']), [
+            'user_id' => auth()->id(),
+            'image' => $path
+        ])));
     }
 }

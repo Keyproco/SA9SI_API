@@ -7,6 +7,7 @@ export default class Example extends Component {
         body: "",
         title: "",
         tag: "",
+        image: "",
         questions: []
     };
     handleTagOption = e => this.setState({ tag: e.target.value });
@@ -14,16 +15,30 @@ export default class Example extends Component {
         this.setState({ body: e.target.value });
     };
     handleTitle = e => this.setState({ title: e.target.value });
+    handleImage = e => {
+        // let form = new FormData();
+        // form.append("image", e.target.files[0]);
+        this.setState({ image: e.target.files[0] });
+    };
     handleSubmit = e => {
         e.preventDefault();
-        Axios.post("/question", this.state)
+        let form = new FormData();
+        form.append("image", this.state.image);
+        form.append("title", this.state.title);
+        form.append("body", this.state.body);
+        form.append("tag", this.state.tag);
+        Axios.post("/question", form, {
+            headers: {
+                "Content-Type": `multipart/form-data; boundary=${form._boundary}`
+            }
+        })
             .then(({ data }) => {
                 this.setState(prevState => ({
                     questions: [...prevState.questions, data]
                 }));
                 console.log(data);
             })
-            .catch(e => console.log(e));
+            .catch(e => console.log("ERROR", e));
     };
     questions() {
         return this.state.questions.map((question, i) => {
@@ -82,6 +97,17 @@ export default class Example extends Component {
                                     <option>physique</option>
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <label htmlFor="exampleFormControlFile1">
+                                    Ajouter une image de couverture
+                                </label>
+                                <input
+                                    type="file"
+                                    className="form-control-file"
+                                    id="exampleFormControlFile1"
+                                    onChange={this.handleImage}
+                                />
+                            </div>
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlTextarea1">
                                     Quelle question voulez-vous poser?
@@ -94,6 +120,7 @@ export default class Example extends Component {
                                     onChange={this.handleTextArea}
                                 />
                             </div>
+
                             <button
                                 onClick={this.handleSubmit}
                                 type="submit"

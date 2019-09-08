@@ -61732,6 +61732,7 @@ function (_Component) {
       body: "",
       title: "",
       tag: "",
+      image: "",
       questions: []
     });
 
@@ -61753,9 +61754,26 @@ function (_Component) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_this), "handleImage", function (e) {
+      // let form = new FormData();
+      // form.append("image", e.target.files[0]);
+      _this.setState({
+        image: e.target.files[0]
+      });
+    });
+
     _defineProperty(_assertThisInitialized(_this), "handleSubmit", function (e) {
       e.preventDefault();
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/question", _this.state).then(function (_ref) {
+      var form = new FormData();
+      form.append("image", _this.state.image);
+      form.append("title", _this.state.title);
+      form.append("body", _this.state.body);
+      form.append("tag", _this.state.tag);
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/question", form, {
+        headers: {
+          "Content-Type": "multipart/form-data; boundary=".concat(form._boundary)
+        }
+      }).then(function (_ref) {
         var data = _ref.data;
 
         _this.setState(function (prevState) {
@@ -61766,7 +61784,7 @@ function (_Component) {
 
         console.log(data);
       })["catch"](function (e) {
-        return console.log(e);
+        return console.log("ERROR", e);
       });
     });
 
@@ -61830,6 +61848,15 @@ function (_Component) {
         id: "exampleFormControlSelect1",
         onChange: this.handleTagOption
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "science"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "culture"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "physique"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "form-group"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "exampleFormControlFile1"
+      }, "Ajouter une image de couverture"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "file",
+        className: "form-control-file",
+        id: "exampleFormControlFile1",
+        onChange: this.handleImage
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "exampleFormControlTextarea1"
