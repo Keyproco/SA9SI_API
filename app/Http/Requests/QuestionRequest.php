@@ -36,9 +36,8 @@ class QuestionRequest extends FormRequest
     {
         $file = request()->file('image');
         $ext = $file->extension();
-        $path = $file->storeAs('public/covers-' . auth()->id(), "cover." . "{$ext}", 'local');
+        $path = $file->store('public/covers-' . auth()->id());
         $publicPath = \Storage::url($path);
-        $url = asset($publicPath);
 
         auth()->user()->ask(new Question(array_merge($this->only(['title', 'body', 'tag']), [
             'user_id' => auth()->id(),
