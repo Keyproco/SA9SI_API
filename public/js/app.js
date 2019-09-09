@@ -61782,7 +61782,7 @@ function (_Component) {
           };
         });
 
-        console.log(data);
+        console.log("Hey", data);
       })["catch"](function (e) {
         return console.log("ERROR", e);
       });

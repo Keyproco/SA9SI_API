@@ -36,7 +36,7 @@ export default class Example extends Component {
                 this.setState(prevState => ({
                     questions: [...prevState.questions, data]
                 }));
-                console.log(data);
+                console.log("Hey", data);
             })
             .catch(e => console.log("ERROR", e));
     };

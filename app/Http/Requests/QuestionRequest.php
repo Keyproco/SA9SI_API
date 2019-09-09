@@ -35,11 +35,10 @@ class QuestionRequest extends FormRequest
     public function processQuestionRequest()
     {
         $file = request()->file('image');
-        $ext = $file->extension();
         $path = $file->store('public/covers-' . auth()->id());
         $publicPath = \Storage::url($path);
 
-        auth()->user()->ask(new Question(array_merge($this->only(['title', 'body', 'tag']), [
+        return auth()->user()->ask(new Question(array_merge($this->only(['title', 'body', 'tag']), [
             'user_id' => auth()->id(),
             'image' => $publicPath
         ])));
