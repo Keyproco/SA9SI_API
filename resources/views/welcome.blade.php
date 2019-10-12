@@ -37,9 +37,6 @@
             .content {
                 text-align: center;
             }
-            .m-b-md {
-                margin-bottom: 30px;
-            }
         </style>
     </head>
     <body>
@@ -58,8 +55,6 @@
                 </div>
             @endif
 
-            <div class="content">
-            </div>
 
             <div id="App"> </div>
         </div>
