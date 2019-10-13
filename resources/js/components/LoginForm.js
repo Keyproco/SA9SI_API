@@ -23,7 +23,7 @@ class LoginForm extends Component {
 			.then((r) => {
 				console.log(r.data.acess_token);
 				localStorage.setItem('token', r.data.acess_token);
-				this.props.history.push('/welcome');
+				// this.props.history.push('/welcome');
 				console.log('localStorage', localStorage.getItem('token'));
 			})
 			.catch((e) => console.log(e));

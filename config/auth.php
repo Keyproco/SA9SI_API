@@ -42,7 +42,7 @@ return [
         ],
 
         'api' => [
-            'driver' => 'passportphp artisan passport:keys',
+            'driver' => 'passport',
             'provider' => 'users',
             'hash' => false,
         ],

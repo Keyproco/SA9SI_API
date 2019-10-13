@@ -15,7 +15,7 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $questions = Question::all();
+        $questions = Question::all()->load('user');
         return !$questions->isEmpty() ? $questions : [];
     }
 
