@@ -61469,8 +61469,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n\theight: 600px;\n\tbackground-image: url(/images/collaboration.svg);\n\tbackground-size: 100%;\n\tbackground-repeat: no-repeat;\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n\theight: 400px;\n\n\tbackground-size: 100%;\n\tbackground-repeat: no-repeat;\n"]);
+  var data = _taggedTemplateLiteral(["\n\theight: 1000px;\n\tbackground-image: url(/images/blue-header.svg);\n\tbackground-repeat: no-repeat;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -61480,7 +61490,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n\theight: 800px;\n\tbackground-image: url(/images/blue-header.svg);\n\tbackground-size: 100%;\n\tbackground-repeat: no-repeat;\n"]);
+  var data = _taggedTemplateLiteral(["\n\tcolor: white;\n\tfont-weight: 400;\n\tfont-size: 12px;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -61490,7 +61500,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["color: red;"]);
+  var data = _taggedTemplateLiteral(["\n\tcolor: white;\n\tfont-weight: 600;\n\tfont-size: 2.5rem;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -61502,20 +61512,27 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
- // import Collboration from '../../../public/images/collaboration.svg';
 
 var Title = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h2(_templateObject());
-var HeaderImage = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section(_templateObject2());
-var CollabTeam = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].img(_templateObject3());
+var SubTitle = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h2(_templateObject2());
+var HeaderImage = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section(_templateObject3());
+var CollabTeam = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject4());
 
 function Header() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderImage, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "hero-body"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Title, null, " Hello from styled components "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    className: "subtitle"
-  }, "Hero subtitle"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CollabTeam, null)))));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: {
+      marginTop: 250
+    },
+    className: "columns"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "column is-half"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Title, null, " Sa9si, la plateforme qui nous r\xE9unit tous"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SubTitle, null, "When you need a kickstart in your business and you have no time for coding for your website, xPider will take that job for you and will build a great looking website in minutes.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "column is-half"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CollabTeam, null)))))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
