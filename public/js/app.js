@@ -64656,6 +64656,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _templateObject4() {
   var data = _taggedTemplateLiteral(["\n\theight: 600px;\n\tbackground-image: url(/images/collaboration.svg);\n\tbackground-size: 100%;\n\tbackground-repeat: no-repeat;\n"]);
 
@@ -64700,6 +64701,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
 var Title = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h2(_templateObject());
 var SubTitle = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h2(_templateObject2());
 var HeaderImage = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section(_templateObject3());
@@ -64717,8 +64719,9 @@ function Header() {
     className: "columns"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "column is-half"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Title, null, " Sa9si, la plateforme qui nous r\xE9unit tous "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SubTitle, null, "When you need a kickstart in your business and you have no time for coding for your website, xPider will take that job for you and will build a great looking website in minutes."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "button is-info"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Title, null, " Sa9si, la plateforme qui nous r\xE9unit tous "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SubTitle, null, "When you need a kickstart in your business and you have no time for coding for your website, xPider will take that job for you and will build a great looking website in minutes."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    exact: true,
+    to: "/connecter"
   }, "Rejoindre")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "column is-half"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CollabTeam, null)))))));
@@ -64770,6 +64773,11 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+var loginPage = function loginPage() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " Login page ");
+};
+
 var App =
 /*#__PURE__*/
 function (_Component) {
@@ -64787,7 +64795,15 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
+        exact: true,
+        path: "/",
+        component: _components_Header__WEBPACK_IMPORTED_MODULE_3__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
+        exact: true,
+        path: "/connecter",
+        component: loginPage
+      })));
     }
   }]);
 

@@ -5,11 +5,11 @@
 <div class="row justify-content-center">
 
   <div class="col-md-2">
-<div class="list-group">
+{{-- <div class="list-group">
    @foreach ($tags as $tag)
    <a href="/tag/{{$tag}}"  class="list-group-item list-group-item-action ">  {{$tag}} </a>
     @endforeach
-</div>
+</div> --}}
 
   </div>
         <div class="col-md-8">

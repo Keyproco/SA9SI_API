@@ -4,12 +4,20 @@ import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import Header from './components/Header';
 import { BrowserRouter } from 'react-router-dom';
+
+import { Switch, Route } from 'react-router-dom';
+const loginPage = () => {
+	return <div> Login page </div>;
+};
 export default class App extends Component {
 	componentWillMount() {}
 	render() {
 		return (
 			<BrowserRouter>
-				<Header />
+				<Switch>
+					<Route exact path="/" component={Header} />
+					<Route exact path="/connecter" component={loginPage} />
+				</Switch>
 			</BrowserRouter>
 		);
 	}

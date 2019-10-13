@@ -21,8 +21,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $tags = \App\Tag::has('questions')->pluck('name');
+        // $tags = \App\Tag::has('questions')->pluck('name');
 
-        return view('home', compact('tags'));
+        // return view('home', compact('tags'));
+        return view('home');
     }
 }

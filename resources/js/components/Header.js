@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 const Title = styled.h2`
 	color: white;
 	font-weight: 600;
@@ -22,6 +23,7 @@ const CollabTeam = styled.div`
 	background-size: 100%;
 	background-repeat: no-repeat;
 `;
+
 function Header() {
 	return (
 		<div>
@@ -36,7 +38,9 @@ function Header() {
 									website, xPider will take that job for you and will build a great looking website in
 									minutes.
 								</SubTitle>
-								<a className="button is-info">Rejoindre</a>
+								<Link exact to="/connecter">
+									Rejoindre
+								</Link>
 							</div>
 							<div className="column is-half">
 								<CollabTeam />
