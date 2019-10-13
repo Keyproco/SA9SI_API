@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import Welcome from './components/Header';
+import LandPage from './components/Header';
+import Welcome from './pages/Welcome';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Auth from './pages/Auth';
 export default class App extends Component {
@@ -10,8 +11,9 @@ export default class App extends Component {
 		return (
 			<BrowserRouter>
 				<Switch>
-					<Route exact path="/" component={Welcome} />
+					<Route exact path="/" component={LandPage} />
 					<Route exact path="/connecter" component={Auth} />
+					<Route exact path="/welcome" component={Welcome} />
 				</Switch>
 			</BrowserRouter>
 		);
