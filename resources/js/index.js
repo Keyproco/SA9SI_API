@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-// import Axios from "axios";
-import styled from 'styled-components';
-import Header from './components/Header';
-import { BrowserRouter } from 'react-router-dom';
 
-import { Switch, Route } from 'react-router-dom';
-const loginPage = () => {
-	return <div> Login page </div>;
-};
+import Welcome from './components/Header';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Auth from './pages/auth';
 export default class App extends Component {
 	componentWillMount() {}
 	render() {
 		return (
 			<BrowserRouter>
 				<Switch>
-					<Route exact path="/" component={Header} />
-					<Route exact path="/connecter" component={loginPage} />
+					<Route exact path="/" component={Welcome} />
+					<Route exact path="/connecter" component={Auth} />
 				</Switch>
 			</BrowserRouter>
 		);

@@ -38,9 +38,7 @@ function Header() {
 									website, xPider will take that job for you and will build a great looking website in
 									minutes.
 								</SubTitle>
-								<Link exact to="/connecter">
-									Rejoindre
-								</Link>
+								<Link to="/connecter">Se Connecter</Link>
 							</div>
 							<div className="column is-half">
 								<CollabTeam />
