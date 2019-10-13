@@ -13,6 +13,7 @@ const SubTitle = styled.h2`
 const HeaderImage = styled.section`
 	height: 1000px;
 	background-image: url(/images/blue-header.svg);
+	background-size: cover;
 	background-repeat: no-repeat;
 `;
 const CollabTeam = styled.div`
@@ -29,12 +30,13 @@ function Header() {
 					<div className="container">
 						<div style={{ marginTop: 250 }} className="columns">
 							<div className="column is-half">
-								<Title> Sa9si, la plateforme qui nous réunit tous</Title>
+								<Title> Sa9si, la plateforme qui nous réunit tous </Title>
 								<SubTitle>
 									When you need a kickstart in your business and you have no time for coding for your
 									website, xPider will take that job for you and will build a great looking website in
 									minutes.
 								</SubTitle>
+								<a className="button is-info">Rejoindre</a>
 							</div>
 							<div className="column is-half">
 								<CollabTeam />

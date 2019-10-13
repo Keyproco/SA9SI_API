@@ -61480,7 +61480,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n\theight: 1000px;\n\tbackground-image: url(/images/blue-header.svg);\n\tbackground-repeat: no-repeat;\n"]);
+  var data = _taggedTemplateLiteral(["\n\theight: 1000px;\n\tbackground-image: url(/images/blue-header.svg);\n\tbackground-size: cover;\n\tbackground-repeat: no-repeat;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -61530,7 +61530,9 @@ function Header() {
     className: "columns"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "column is-half"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Title, null, " Sa9si, la plateforme qui nous r\xE9unit tous"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SubTitle, null, "When you need a kickstart in your business and you have no time for coding for your website, xPider will take that job for you and will build a great looking website in minutes.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Title, null, " Sa9si, la plateforme qui nous r\xE9unit tous "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SubTitle, null, "When you need a kickstart in your business and you have no time for coding for your website, xPider will take that job for you and will build a great looking website in minutes."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "button is-info"
+  }, "Rejoindre")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "column is-half"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CollabTeam, null)))))));
 }
