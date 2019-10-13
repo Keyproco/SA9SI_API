@@ -28,6 +28,7 @@
     },
     "dependencies": {
         "bulma": "^0.7.5",
+        "react-router-dom": "^5.1.2",
         "styled-components": "^4.4.0"
     }
 }
