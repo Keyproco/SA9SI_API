@@ -64851,8 +64851,14 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "login", function () {
+      localStorage.removeItem('token');
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/login', _this.state).then(function (r) {
-        console.log(r.data.acess_token); // console.log(this.props.history.push('/welcome'));
+        console.log(r.data.acess_token);
+        localStorage.setItem('token', r.data.acess_token);
+
+        _this.props.history.push('/welcome');
+
+        console.log('localStorage', localStorage.getItem('token'));
       })["catch"](function (e) {
         return console.log(e);
       });

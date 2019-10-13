@@ -17,11 +17,14 @@ class LoginForm extends Component {
 		});
 	};
 	login = () => {
+		localStorage.removeItem('token');
 		axios
 			.post('/api/login', this.state)
 			.then((r) => {
 				console.log(r.data.acess_token);
-				// console.log(this.props.history.push('/welcome'));
+				localStorage.setItem('token', r.data.acess_token);
+				this.props.history.push('/welcome');
+				console.log('localStorage', localStorage.getItem('token'));
 			})
 			.catch((e) => console.log(e));
 	};
