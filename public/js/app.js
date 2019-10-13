@@ -64746,7 +64746,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Header */ "./resources/js/components/Header.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _pages_auth__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/auth */ "./resources/js/pages/auth.js");
+/* harmony import */ var _pages_Auth__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/Auth */ "./resources/js/pages/Auth.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -64795,7 +64795,7 @@ function (_Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
         exact: true,
         path: "/connecter",
-        component: _pages_auth__WEBPACK_IMPORTED_MODULE_4__["default"]
+        component: _pages_Auth__WEBPACK_IMPORTED_MODULE_4__["default"]
       })));
     }
   }]);
@@ -64811,16 +64811,16 @@ if (document.getElementById('App')) {
 
 /***/ }),
 
-/***/ "./resources/js/pages/auth.js":
+/***/ "./resources/js/pages/Auth.js":
 /*!************************************!*\
-  !*** ./resources/js/pages/auth.js ***!
+  !*** ./resources/js/pages/Auth.js ***!
   \************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return auth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Auth; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -64843,18 +64843,18 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var auth =
+var Auth =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(auth, _Component);
+  _inherits(Auth, _Component);
 
-  function auth() {
-    _classCallCheck(this, auth);
+  function Auth() {
+    _classCallCheck(this, Auth);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(auth).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Auth).apply(this, arguments));
   }
 
-  _createClass(auth, [{
+  _createClass(Auth, [{
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -64867,7 +64867,7 @@ function (_Component) {
     }
   }]);
 
-  return auth;
+  return Auth;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 

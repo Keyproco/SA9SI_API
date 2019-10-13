@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class auth extends Component {
+export default class Auth extends Component {
 	render() {
 		return (
 			<div class="columns">

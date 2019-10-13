@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Welcome from './components/Header';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Auth from './pages/auth';
+import Auth from './pages/Auth';
 export default class App extends Component {
 	componentWillMount() {}
 	render() {
