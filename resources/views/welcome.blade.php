@@ -56,7 +56,7 @@
             @endif
 
 
-            <div id="App"> </div>
+
         </div>
     </body>
 </html>

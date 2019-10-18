@@ -15,3 +15,6 @@ require('./bootstrap');
 require('./components/Example');
 
 require('./index');
+if (process.env.NODE_ENV === 'development' && module.hot) {
+	module.hot.accept();
+}
