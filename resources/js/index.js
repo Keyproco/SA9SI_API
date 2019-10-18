@@ -6,7 +6,7 @@ import Welcome from './pages/Welcome';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { AppContainer } from 'react-hot-loader';
 import Auth from './pages/Auth';
-
+import '../sass/app.scss';
 export default class App extends Component {
 	componentWillMount() {}
 	render() {
