@@ -1,13 +1,13 @@
+import { hot } from 'react-hot-loader/root';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import LandPage from './components/Header';
 import Welcome from './pages/Welcome';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { AppContainer } from 'react-hot-loader';
 import Auth from './pages/Auth';
 import '../sass/app.scss';
-export default class App extends Component {
+class App extends Component {
 	componentWillMount() {}
 	render() {
 		return (
@@ -22,14 +22,9 @@ export default class App extends Component {
 		);
 	}
 }
-
+export default hot(App);
 if (document.getElementById('App')) {
-	ReactDOM.render(
-		<AppContainer>
-			<App />
-		</AppContainer>,
-		document.getElementById('App')
-	);
+	ReactDOM.render(<App />, document.getElementById('App'));
 }
 
 if (process.env.NODE_ENV === 'development' && module.hot) {
