@@ -16,7 +16,6 @@ class App extends Component {
 					<Route exact path="/" component={LandPage} />
 					<Route exact path="/connecter" component={Auth} />
 					<Route exact path="/welcome" component={Welcome} />
-					<Route exact path="/welcome" component={Welcome} />
 				</Switch>
 			</BrowserRouter>
 		);
