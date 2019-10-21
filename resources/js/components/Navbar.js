@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-function Navbar({ user }) {
-	console.log('navbar', user);
+function Navbar({ auth }) {
+	console.log('logged', auth);
 	return (
 		<div>
 			<nav className="navbar" role="navigation" aria-label="main navigation">
@@ -47,7 +47,7 @@ function Navbar({ user }) {
 						<div className="navbar-item">
 							<div className="buttons">
 								<a className="button is-primary">
-									<strong>{user}</strong>
+									<strong>{auth ? 'signedIn' : 'singnedOut'}</strong>
 								</a>
 								<a className="button is-light">Log in</a>
 							</div>
