@@ -7,31 +7,46 @@ const SectionBackground = styled.div`
 `;
 import { connect } from 'react-redux';
 import Navbar from '../components/Navbar';
-
+import * as actions from '../actions';
 class Welcome extends Component {
-	// componentDidMount() {
-	// 	axios
-	// 		.get('http://localhost:8080/api/user', {
-	// 			headers: {
-	// 				Accept: 'application/json',
-	// 				'Content-Type': 'application/json',
-	// 				Authorization: 'Bearer ' + localStorage.getItem('token'),
-	// 				withCredentials: false
-	// 			}
-	// 		})
-	// 		.then((r) => {
-	// 			this.setState({
-	// 				user: {
-	// 					name: r.data.name
-	// 				}
-	// 			});
-	// 		})
-	// 		.catch((e) => console.log(e));
-	// }
+	componentDidMount() {
+		this.isAutorizedToNavigate();
+		// 	axios
+		// 		.get('http://localhost:8080/api/user', {
+		// 			headers: {
+		// 				Accept: 'application/json',
+		// 				'Content-Type': 'application/json',
+		// 				Authorization: 'Bearer ' + localStorage.getItem('token'),
+		// 				withCredentials: false
+		// 			}
+		// 		})
+		// 		.then((r) => {
+		// 			this.setState({
+		// 				user: {
+		// 					name: r.data.name
+		// 				}
+		// 			});
+		// 		})
+		// 		.catch((e) => console.log(e));
+	}
+	componentDidUpdate() {
+		this.isAutorizedToNavigate();
+	}
+	isAutorizedToNavigate() {
+		if (!this.props.auth) {
+			console.log('/ page');
+		}
+	}
+	componentDidUpdate() {}
+	changeAuth = () => {
+		console.log('changing auth...');
+		this.props.changeAuth(false);
+		console.log(this.props.auth);
+	};
 	render() {
 		return (
 			<div>
-				<Navbar auth={this.props.auth} />
+				<Navbar changeAuth={this.changeAuth} auth={this.props.auth} />
 				<SectionBackground className="columns">
 					<div className="column is-1" />
 					<div className="column">

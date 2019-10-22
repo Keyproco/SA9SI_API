@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-function Navbar({ auth }) {
-	console.log('logged', auth);
+function Navbar({ changeAuth, auth }) {
 	return (
 		<div>
 			<nav className="navbar" role="navigation" aria-label="main navigation">
@@ -47,9 +46,11 @@ function Navbar({ auth }) {
 						<div className="navbar-item">
 							<div className="buttons">
 								<a className="button is-primary">
-									<strong>{auth ? 'signedIn' : 'singnedOut'}</strong>
+									<strong>{auth ? 'Hello' : 'Arwah'}</strong>
 								</a>
-								<a className="button is-light">Log in</a>
+								<a onClick={changeAuth} className="button is-light">
+									Log in
+								</a>
 							</div>
 						</div>
 					</div>
